@@ -12,7 +12,7 @@ class Contact
 			std::string	_lastName;
 			std::string	_nickname;
 			std::string	_phoneNumber;
-			std::string	_darkestSecret;
+			std::string	_secret;
 
 	public:
 			Contact();
@@ -20,7 +20,6 @@ class Contact
 			void	fillContact(int index);
 			void	displayContact(void)const;
 			void	displayContactDetail(void)const;
-			void	setIndex(int index);
 };
 
 #endif

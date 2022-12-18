@@ -1,6 +1,6 @@
 #ifndef PHONEBOOK_HPP
 # define PHONEBOOK_HPP
-# define MAX_CONTACTS 9
+# define MAX_CONTACTS 8
 # include "Contact.hpp"
 
 class PhoneBook
@@ -14,8 +14,7 @@ class PhoneBook
 			~PhoneBook();
 			void	addContact(void);
 			void	searchContact(void)const;
-
-
+			void	printAll(void);
 };
 
 #endif
