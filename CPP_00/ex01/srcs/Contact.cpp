@@ -26,21 +26,33 @@ void	Contact::fillContact(int index)
 	std::getline(std::cin, _secret);
 }
 
+std::string	shorten(std::string str)
+{
+	if (str.length() <= 10)
+		return (str);
+	str = str.substr(0, 9);
+	str += '.';
+	return (str);
+}
+
 void	Contact::displayContact(void)const
 {
 	if (_index < 0)
 		return ;
 	std::cout << std::setw(10) << _index << "|";
-	std::cout << std::setw(10) << _firstName.substr(0, 10) << "|";
-	std::cout << std::setw(10) << _lastName.substr(0, 10) << "|";
-	std::cout << std::setw(10) << _nickname.substr(0, 10) << "|" << std::endl;
+	std::cout << std::setw(10) << shorten(_firstName) << "|";
+	std::cout << std::setw(10) << shorten(_lastName) << "|";
+	std::cout << std::setw(10) << shorten(_nickname) << "|" << std::endl;
 	return ;
 }
 
 void	Contact::displayContactDetail(void)const
 {
 	if (_index < 0)
+	{
+		std::cout << "This contact is empty!\n";
 		return ;
+	}
 	std::cout << "---- Contact " << _index << " ----" << std::endl;
 	std::cout << "First Name: " << _firstName << std::endl;
 	std::cout << "Last Name: " << _lastName << std::endl;

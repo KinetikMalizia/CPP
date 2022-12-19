@@ -14,6 +14,8 @@ int	main(void)
 			std::cout << std::endl;
 			return (1);
 		}
+		if (command == "EXIT")
+			return (0);
 		if (command == "ADD")
 			book.addContact();
 		else if (command == "SE")
