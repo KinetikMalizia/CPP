@@ -48,15 +48,16 @@ void	PhoneBook::searchContact(void)const
 		_contacts[i].displayContact();
 		++i;
 	}
-	while ((index < 0) || (index > MAX_CONTACTS - 1))
+	while ((index < 0) || (index >= MAX_CONTACTS))
 	{
 		std::cout << "Please enter the index of the desired contact: ";
 		std::cin >> index;
 		std::cin.clear();
 		std::cin.ignore(100, '\n');
-		if ((index < 0) || (index > MAX_CONTACTS - 1))
+		if ((index < 0) || (index >= MAX_CONTACTS))
 			std::cout << "The index: " << index << " is invalid\n";
 	}
+	std::cout << "index:" << index << std::endl;
 	_contacts[index].displayContactDetail();
 	return ;
 }
