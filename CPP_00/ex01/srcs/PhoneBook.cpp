@@ -32,10 +32,12 @@ void	PhoneBook::addContact(void)
 
 void	PhoneBook::searchContact(void)const
 {
-	int	i = 0;
-	int	index = -1;
+	int			i = 0;
+	int			index = -1;
+	bool		all_digit = 1;
+	std::string	entry;
 
-	if (_lastIndex == 0)
+	if (_contacts[0].getIndex() < 0)
 	{
 		std::cout << "The phonebook is empty!\n";
 		return ;
@@ -49,11 +51,9 @@ void	PhoneBook::searchContact(void)const
 	while ((index < 0) || (index > MAX_CONTACTS - 1))
 	{
 		std::cout << "Please enter the index of the desired contact: ";
-		if(std::cin >> index)
-		{
-			std::cin.clear();
-			std::cin.ignore(100, '\n');
-		}
+		std::cin >> index;
+		std::cin.clear();
+		std::cin.ignore(100, '\n');
 		if ((index < 0) || (index > MAX_CONTACTS - 1))
 			std::cout << "The index: " << index << " is invalid\n";
 	}

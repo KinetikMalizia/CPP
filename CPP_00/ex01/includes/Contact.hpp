@@ -20,6 +20,11 @@ class Contact
 			void	fillContact(int index);
 			void	displayContact(void)const;
 			void	displayContactDetail(void)const;
+
+			int	getIndex(void) const
+			{
+				return (_index);
+			}
 };
 
 #endif
