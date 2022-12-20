@@ -49,7 +49,11 @@ void	PhoneBook::searchContact(void)const
 	while ((index < 0) || (index > MAX_CONTACTS - 1))
 	{
 		std::cout << "Please enter the index of the desired contact: ";
-		std::cin >> index;
+		if(std::cin >> index)
+		{
+			std::cin.clear();
+			std::cin.ignore(100, '\n');
+		}
 		if ((index < 0) || (index > MAX_CONTACTS - 1))
 			std::cout << "The index: " << index << " is invalid\n";
 	}
