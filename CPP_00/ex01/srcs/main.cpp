@@ -18,10 +18,8 @@ int	main(void)
 			return (0);
 		if (command == "ADD")
 			book.addContact();
-		else if (command == "SE")
+		else if (command == "SEARCH")
 			book.searchContact();
-		else if (command == "SHOW")
-			book.printAll();
 		else
 			std::cout << "No command named: \"" << command
 				<< "\" please use ADD SEARCH or EXIT\n";

@@ -14,16 +14,37 @@ Contact::~Contact(void)
 void	Contact::fillContact(int index)
 {
 	_index = index;
-	std::cout << "First Name: ";
-	std::getline(std::cin, _firstName);
-	std::cout << "Last Name: ";
-	std::getline(std::cin, _lastName);
-	std::cout << "Nickname: ";
-	std::getline(std::cin, _nickname);
-	std::cout << "Phone Number: ";
-	std::getline(std::cin, _phoneNumber);
-	std::cout << "Darkest Secret: ";
-	std::getline(std::cin, _secret);
+		
+	do
+	{
+		std::cout << "First Name: ";
+		std::getline(std::cin, _firstName);
+	}
+	while(_firstName.empty());
+	do
+	{
+		std::cout << "Last Name: ";
+		std::getline(std::cin, _lastName);
+	}
+	while(_lastName.empty());
+	do
+	{
+		std::cout << "Nickname: ";
+		std::getline(std::cin, _nickname);
+	}
+	while(_nickname.empty());
+	do
+	{
+		std::cout << "Phone Number: ";
+		std::getline(std::cin, _phoneNumber);
+	}
+	while(_phoneNumber.empty());
+	do
+	{
+		std::cout << "Darkest Secret: ";
+		std::getline(std::cin, _secret);
+	}
+	while(_secret.empty());
 }
 
 std::string	shorten(std::string str)

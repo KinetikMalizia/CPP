@@ -61,14 +61,3 @@ void	PhoneBook::searchContact(void)const
 	_contacts[index].displayContactDetail();
 	return ;
 }
-
-void	PhoneBook::printAll(void)
-{
-	int	i = 0;
-
-	while (i < MAX_CONTACTS)
-	{
-		_contacts[i].displayContact();
-		++i;
-	}
-}
