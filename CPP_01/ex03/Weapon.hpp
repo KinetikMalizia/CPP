@@ -1,7 +1,7 @@
 #ifndef WEAPON_HPP
-# define Weapon_HPP
+# define WEAPON_HPP
 # include <string>
-#include <iostream>
+# include <iostream>
 
 class Weapon
 {
