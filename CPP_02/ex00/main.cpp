@@ -9,10 +9,10 @@ int	main(void)
 
 	c.setRawBits(34);
 	d = c;
-	std::cout << a.getRawBits() << std::endl;
-	std::cout << b.getRawBits() << std::endl;
-	std::cout << c.getRawBits() << std::endl;
-	std::cout << d.getRawBits() << std::endl;
+	std::cout << "a: " << a.getRawBits() << std::endl;
+	std::cout << "b: " << b.getRawBits() << std::endl;
+	std::cout << "c: " << c.getRawBits() << std::endl;
+	std::cout << "d: " << d.getRawBits() << std::endl;
 
 	return 0;
 }
