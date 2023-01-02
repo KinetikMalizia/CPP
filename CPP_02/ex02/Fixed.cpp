@@ -103,9 +103,88 @@ int Fixed::operator!=(Fixed const& rhs) const
 	return(0);
 }
 
-Fixed	operator+(Fixed const& rhs) const
+Fixed	Fixed::operator+(Fixed const& rhs) const
 {
+	Fixed ret(this->toFloat() + rhs.toFloat());
 
+	return (ret);
+}
+
+Fixed	Fixed::operator-(Fixed const& rhs) const
+{
+	Fixed ret(this->toFloat() - rhs.toFloat());
+
+	return (ret);
+}
+
+Fixed	Fixed::operator*(Fixed const& rhs) const
+{
+	Fixed ret(this->toFloat() * rhs.toFloat());
+
+	return (ret);
+}
+
+Fixed	Fixed::operator/(Fixed const& rhs) const
+{
+	Fixed ret(this->toFloat() / rhs.toFloat());
+
+	return (ret);
+}
+
+Fixed	&Fixed::operator++(void)
+{
+	this->_value += 1;
+	return (*this);
+}
+
+Fixed	&Fixed::operator--(void)
+{
+	this->_value -= 1;
+	return (*this);
+}
+
+Fixed	Fixed::operator++(int)
+{
+	Fixed	temp = *this;
+
+	this->_value += 1;
+	return (temp);
+}
+
+Fixed	Fixed::operator--(int)
+{
+	Fixed	temp = *this;
+
+	this->_value += 1;
+	return (temp);
+}
+
+Fixed	&Fixed::min(Fixed &a, Fixed &b)
+{
+	if (a > b)
+		return (b);
+	return (a);
+}
+
+const Fixed	&Fixed::min(const Fixed &a, const Fixed &b)
+{
+	if (a > b)
+		return (b);
+	return (a);
+}
+
+Fixed	&Fixed::max(Fixed &a, Fixed &b)
+{
+	if (a > b)
+		return (a);
+	return (b);
+}
+
+const Fixed	&Fixed::max(const Fixed &a, const Fixed &b)
+{
+	if (a > b)
+		return (a);
+	return (b);
 }
 
 std::ostream& operator<<(std::ostream& o, Fixed const& rhs)

@@ -25,8 +25,6 @@ class Fixed
 			Fixed&	operator=(Fixed const& rhs);
 			int	operator>(Fixed const& rhs) const;
 			int	operator<(Fixed const& rhs) const;
-			int	operator>>(Fixed const& rhs) const;
-			int	operator<<(Fixed const& rhs) const;
 			int	operator>=(Fixed const& rhs) const;
 			int	operator<=(Fixed const& rhs) const;
 			int	operator==(Fixed const& rhs) const;
@@ -39,11 +37,18 @@ class Fixed
 			Fixed	operator/(Fixed const& rhs) const;
 
 			/*Prefix ++F --F*/
-			Fixed&	operator++(void) const;
-			Fixed&	operator--(void) const;
+			Fixed	&operator++(void);
+			Fixed	&operator--(void);
 			/*Postfix F++ F--*/
-			Fixed	operator*(int n) const;
-			Fixed	operator/(int n) const;
+			Fixed	operator++(int n);
+			Fixed	operator--(int n);
+
+			/*min  max*/
+			static Fixed &min(Fixed &a, Fixed &b);
+			static const Fixed &min(const Fixed &a, const Fixed &b);
+			static Fixed &max(Fixed &a, Fixed &b);
+			static const Fixed &max(const Fixed &a, const Fixed &b);
+
 };
 
 std::ostream& operator<<(std::ostream& o, Fixed const& rhs);
