@@ -1,17 +1,23 @@
 #include "ClapTrap.hpp"
 
+ClapTrap::ClapTrap(std::string name, int hit, int energy, int attack) :
+	_name(name), _hit(hit), _energy(energy), _attack(attack)
+{
+	std::cout << this->_name << ": CT parameter constructor called\n";
+}
+
 ClapTrap::ClapTrap(std::string	name) : _name(name)
 {
 	this->_hit = 10;
 	this->_energy = 10;
 	this->_attack = 0;
-	std::cout << this->_name << ": constructor called" << std::endl;
+	std::cout << this->_name << ": CT named constructor called" << std::endl;
 }
 
 ClapTrap::ClapTrap(ClapTrap& og)
 {
 	*this = og;
-	std::cout << this->_name << ": Copy contructor called\n";
+	std::cout << this->_name << ": CT Copy contructor called\n";
 }
 
 ClapTrap::ClapTrap()
@@ -20,12 +26,12 @@ ClapTrap::ClapTrap()
 	this->_hit = 10;
 	this->_energy = 10;
 	this->_attack = 0;
-	std::cout << "Default constructor called" << std::endl;
+	std::cout << "CT Default constructor called" << std::endl;
 }
 
 ClapTrap::~ClapTrap()
 {
-	std::cout << this->_name << ": Destructor called" << std::endl;
+	std::cout << this->_name << ": CT Destructor called" << std::endl;
 }
 
 /*Public functions EX00*/
