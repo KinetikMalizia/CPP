@@ -4,7 +4,7 @@
 int main(void)
 {
 	ScavTrap	a("Bop");
-	//ScavTrap	b(a);
+	ScavTrap	b(a);
 	ScavTrap	c;
 
 	c = a;
