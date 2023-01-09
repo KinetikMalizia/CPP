@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fmalizia <fmalizia@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/01/09 13:47:47 by fmalizia          #+#    #+#             */
+/*   Updated: 2023/01/09 13:47:47 by fmalizia         ###   ########.ch       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Animal.hpp"
 
 Animal::Animal(std::string type) : _type(type)
@@ -13,20 +25,21 @@ Animal::Animal(Animal const &og)
 
 Animal::~Animal(void)
 {
-	std::cout << "Animal destrucor called\n";
+	std::cout << "Animal destructor called\n";
 }
 
 Animal &Animal::operator=(Animal const &rhs)
 {
 	this->_type = rhs._type;
+	return (*this);
 }
 
-std::string	Animal::getType()
+std::string	Animal::getType() const
 {
 	return (this->_type);
 }
 
-void	Animal::makeSound(void)
+void	Animal::makeSound(void) const
 {
-	std::cout << "...Generic animal sound...\n";
+	std::cout << this->_type << ": ...Generic animal sound...\n";
 }
