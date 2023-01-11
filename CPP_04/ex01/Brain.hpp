@@ -6,7 +6,7 @@
 /*   By: fmalizia <fmalizia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 11:55:51 by fmalizia          #+#    #+#             */
-/*   Updated: 2023/01/11 14:02:17 by fmalizia         ###   ########.ch       */
+/*   Updated: 2023/01/11 14:52:02 by fmalizia         ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,9 @@ class Brain
 			Brain();
 			Brain(Brain &og);
 			~Brain();
+			Brain &operator=(Brain &rhs);
+			void	setIdea(int i, std::string val);
+			std::string	getIdea(int i);
 };
 
 #endif

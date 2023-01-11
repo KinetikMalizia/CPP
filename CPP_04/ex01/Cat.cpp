@@ -14,28 +14,40 @@
 
 Cat::Cat(Cat &og) : Animal(og.getType())
 {
-		this->_type = og.getType();
+		this->_brain = og._brain;
 		std::cout << "Cat copy constructor called\n";
 }
 
 Cat::Cat(void): Animal("Cat")
 {
-	this->_type = "Cat";
+	this->_brain = new Brain();
 	std::cout << "Cat default constructor called\n";
 }
 
 Cat::~Cat()
 {
+	delete this->_brain;
 	std::cout << "Cat destructor called\n";
 }
 
 Cat	&Cat::operator=(Cat &rhs)
 {
 	this->_type = rhs._type;
+	this->_brain = rhs._brain;
 	return (*this);
 }
 
 void	Cat::makeSound() const
 {
 	std::cout << this->_type << ": !!!Mighty Roar!!!\n";
+}
+
+void	Cat::setIdea(int i, std::string val)
+{
+	this->_brain->setIdea(i, val);
+}
+
+std::string	Cat::getIdea(int i)
+{
+	return (this->_brain->getIdea(i));
 }

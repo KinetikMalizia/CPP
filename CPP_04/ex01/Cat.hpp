@@ -21,14 +21,15 @@
 class Cat : public Animal
 {
 	private:
-			std::string	_type;
-			Brain		*_brain;
+			Brain	*_brain;
 	public:
 			Cat(Cat &og);
 			Cat();
 			~Cat();
-			Cat &operator=(Cat &rhs);
-			void makeSound() const;
+			Cat		&operator=(Cat &rhs);
+			void	makeSound() const;
+			void	setIdea(int i, std::string val);
+			std::string	getIdea(int i);
 };
 
 #endif

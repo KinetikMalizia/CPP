@@ -6,7 +6,7 @@
 /*   By: fmalizia <fmalizia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 13:48:07 by fmalizia          #+#    #+#             */
-/*   Updated: 2023/01/09 16:08:30 by fmalizia         ###   ########.ch       */
+/*   Updated: 2023/01/11 14:51:57 by fmalizia         ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,21 @@
 
 # include <iostream>
 # include <string>
-#include "Animal.hpp"
+# include "Animal.hpp"
+# include "Brain.hpp"
 
 class Dog : public Animal
 {
 	private:
-			std::string	_type;
+			Brain	*_brain;
 	public:
 			Dog(Dog &og);
 			Dog();
 			~Dog();
 			Dog &operator=(Dog &rhs);
 			void makeSound() const;
+			void	setIdea(int i, std::string val);
+			std::string	getIdea(int i);
 };
 
 #endif
