@@ -16,11 +16,13 @@
 # include <iostream>
 # include <string>
 # include "Animal.hpp"
+# include "Brain.hpp"
 
 class Cat : public Animal
 {
 	private:
 			std::string	_type;
+			Brain		*_brain;
 	public:
 			Cat(Cat &og);
 			Cat();

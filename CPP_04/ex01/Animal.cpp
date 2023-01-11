@@ -25,6 +25,7 @@ Animal::Animal(Animal const &og)
 
 Animal::~Animal(void)
 {
+	delete this->_brain;
 	std::cout << "Animal destructor called\n";
 }
 
