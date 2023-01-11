@@ -6,13 +6,13 @@
 #    By: fmalizia <fmalizia@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/09 13:52:17 by fmalizia          #+#    #+#              #
-#    Updated: 2023/01/09 16:08:20 by fmalizia         ###   ########.ch        #
+#    Updated: 2023/01/11 11:53:51 by fmalizia         ###   ########.ch        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = out
 
-SRCS = main.cpp Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp
+SRCS = main.cpp Animal.cpp Cat.cpp Dog.cpp Brain.cpp
 
 OBJS = ${SRCS:.cpp=.o}
 
