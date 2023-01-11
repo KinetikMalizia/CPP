@@ -5,18 +5,18 @@
 #                                                     +:+ +:+         +:+      #
 #    By: fmalizia <fmalizia@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/12/21 15:22:17 by fmalizia          #+#    #+#              #
-#    Updated: 2023/01/11 11:45:51 by fmalizia         ###   ########.ch        #
+#    Created: 2023/01/09 13:52:17 by fmalizia          #+#    #+#              #
+#    Updated: 2023/01/09 16:08:20 by fmalizia         ###   ########.ch        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = zomb
+NAME = out
 
-SRCS = main.cpp newZombie.cpp randomChump.cpp Zombie.cpp
+SRCS = main.cpp Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp
 
 OBJS = ${SRCS:.cpp=.o}
 
-CXX = c++
+CXX  = c++
 
 RM  = rm -f
 
