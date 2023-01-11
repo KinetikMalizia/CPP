@@ -34,7 +34,6 @@ void	PhoneBook::searchContact(void)const
 {
 	int			i = 0;
 	int			index = -1;
-	bool		all_digit = 1;
 	std::string	entry;
 
 	if (_contacts[0].getIndex() < 0)
