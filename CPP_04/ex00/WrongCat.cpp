@@ -2,13 +2,11 @@
 
 WrongCat::WrongCat(WrongCat &og) : WrongAnimal(og.get_type())
 {
-		this->_type = og.get_type();
 		std::cout << "WrongCat copy constructor called\n";
 }
 
 WrongCat::WrongCat(void): WrongAnimal("WrongCat")
 {
-	this->_type = "WrongCat";
 	std::cout << "WrongCat default constructor called\n";
 }
 

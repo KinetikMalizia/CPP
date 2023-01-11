@@ -14,13 +14,11 @@
 
 Cat::Cat(Cat &og) : Animal(og.getType())
 {
-		this->_type = og.getType();
 		std::cout << "Cat copy constructor called\n";
 }
 
 Cat::Cat(void): Animal("Cat")
 {
-	this->_type = "Cat";
 	std::cout << "Cat default constructor called\n";
 }
 

@@ -6,7 +6,7 @@
 /*   By: fmalizia <fmalizia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 13:48:07 by fmalizia          #+#    #+#             */
-/*   Updated: 2023/01/09 16:08:30 by fmalizia         ###   ########.ch       */
+/*   Updated: 2023/01/11 14:04:45 by fmalizia         ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@
 
 class Dog : public Animal
 {
-	private:
-			std::string	_type;
 	public:
 			Dog(Dog &og);
 			Dog();

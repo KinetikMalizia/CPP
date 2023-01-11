@@ -6,7 +6,7 @@
 /*   By: fmalizia <fmalizia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 13:48:02 by fmalizia          #+#    #+#             */
-/*   Updated: 2023/01/09 16:08:23 by fmalizia         ###   ########.ch       */
+/*   Updated: 2023/01/11 14:04:43 by fmalizia         ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,11 @@
 
 Dog::Dog(Dog &og) : Animal(og.getType())
 {
-		this->_type = og.getType();
 		std::cout << "Dog copy constructor called\n";
 }
 
 Dog::Dog() : Animal("Dog")
 {
-	this->_type = "Dog";
 	std::cout << "Dog default constructor called\n";
 }
 
