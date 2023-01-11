@@ -6,7 +6,7 @@
 /*   By: fmalizia <fmalizia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 13:48:02 by fmalizia          #+#    #+#             */
-/*   Updated: 2023/01/11 14:52:08 by fmalizia         ###   ########.ch       */
+/*   Updated: 2023/01/11 15:15:54 by fmalizia         ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 Dog::Dog(Dog &og) : Animal(og.getType())
 {
-		this->_brain = og._brain;
+		this->_brain = new Brain(*og._brain);
 		std::cout << "Dog copy constructor called\n";
 }
 

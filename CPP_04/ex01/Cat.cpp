@@ -14,7 +14,7 @@
 
 Cat::Cat(Cat &og) : Animal(og.getType())
 {
-		this->_brain = og._brain;
+		this->_brain = new Brain(*og._brain);
 		std::cout << "Cat copy constructor called\n";
 }
 
