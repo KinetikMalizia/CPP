@@ -6,7 +6,7 @@
 /*   By: fmalizia <fmalizia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 14:46:33 by fmalizia          #+#    #+#             */
-/*   Updated: 2023/01/11 14:55:26 by fmalizia         ###   ########.ch       */
+/*   Updated: 2023/01/12 11:57:02 by fmalizia         ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,5 +41,12 @@ int	main(void)
 	delete LucyPurr;
 	delete Kodac;
 	delete AnotherDog;
+
+	std::cout << "\n----- multiple animals -----\n";
+	const Animal* zoo[4] = { new Dog(), new Dog(), new Cat(), new Cat() };
+	std::cout << "\n----- delete animals -----\n";
+    for ( int i = 0; i < 4; i++ ) {
+        delete zoo[i];
+    }
 	return (0);
 }
