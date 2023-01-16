@@ -15,6 +15,7 @@
 int	main(void)
 {
 	Fixed a;
+	a.setRawBits(88);
 	Fixed b( a );
 	Fixed c;
 	Fixed d;
