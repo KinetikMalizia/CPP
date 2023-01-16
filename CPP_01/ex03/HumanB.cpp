@@ -29,3 +29,8 @@ void	HumanB::setWeapon(Weapon &weapon)
 {
 	this->_weapon = &weapon;
 }
+
+Weapon	const *HumanB::getWeapon(void)
+{
+	return (this->_weapon);
+}

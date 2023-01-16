@@ -23,7 +23,12 @@ void	Zombie::announce() const
 	return ;
 }
 
+std::string	Zombie::getName(void)
+{
+	return (this->_name);
+}
+
 void	Zombie::setName(std::string name)
 {
-	_name = name;
+	this->_name = name;
 }

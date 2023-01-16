@@ -25,6 +25,7 @@ int	main(int ac, char **av)
 	if (ac != 4)
 	{
 		std::cout << "Wrong syntax... [./out] <filename> <s1> <s2>\n";
+		return (1);
 	}
 	if (!in.is_open())
 	{
@@ -52,5 +53,9 @@ int	main(int ac, char **av)
 	out << std::endl;
 	out.close();
 	in.close();
+	while (1)
+	{
+
+	}
 	return (0);
 }

@@ -7,7 +7,7 @@ Weapon::Weapon(std::string type) : _type(type)
 
 Weapon::Weapon()
 {
-	std::cout << "Default creator called\n";
+	std::cout << "Default Weapon creator called\n";
 }
 
 Weapon::~Weapon()

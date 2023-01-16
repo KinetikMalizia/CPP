@@ -6,7 +6,7 @@
 /*   By: fmalizia <fmalizia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 15:22:32 by fmalizia          #+#    #+#             */
-/*   Updated: 2022/12/21 16:19:40 by fmalizia         ###   ########.ch       */
+/*   Updated: 2023/01/16 10:33:57 by fmalizia         ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,9 @@ class Zombie
 			Zombie(std::string name);
 			Zombie();
 			~Zombie();
-			void	announce(void) const;
+			void		announce(void) const;
+			std::string	getName(void);
+			void		setName(std::string	name);
 };
 
 
