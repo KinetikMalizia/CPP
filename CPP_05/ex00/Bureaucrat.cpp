@@ -10,6 +10,10 @@ Bureaucrat::Bureaucrat(Bureaucrat &og):
 Bureaucrat::Bureaucrat(const std::string name, int grade):
 	_name(name), _grade(grade)
 {
+	if (grade < 1)
+		throw Bureaucrat::GradeTooHighException();
+	if (grade > 150)
+		throw Bureaucrat::GradeTooLowException();
 	std::cout << "Bureaucrat default constructor called\t" << "NAME: "
 		<< this->_name << " GRADE: "<< this->_grade << std::endl;
 }
@@ -45,6 +49,7 @@ void	Bureaucrat::incrementGrade(void)
 {
 	if (this->_grade - 1 < 1)
 		throw Bureaucrat::GradeTooHighException();
+	std::cout << "incrementing: " << this->_name << std::endl;
 	this->_grade -= 1;
 }
 
@@ -52,6 +57,7 @@ void	Bureaucrat::decrementGrade(void)
 {
 	if (this->_grade + 1 > 150)
 		throw Bureaucrat::GradeTooLowException();
+	std::cout << "decrementing: " << this->_name << std::endl;
 	this->_grade += 1;
 }
 
