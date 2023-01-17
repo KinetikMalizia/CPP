@@ -1,34 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fmalizia <fmalizia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/09 13:47:51 by fmalizia          #+#    #+#             */
-/*   Updated: 2023/01/09 13:47:51 by fmalizia         ###   ########.ch       */
+/*   Created: 2023/01/09 13:47:57 by fmalizia          #+#    #+#             */
+/*   Updated: 2023/01/09 13:47:57 by fmalizia         ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
+#ifndef CAT_HPP
+# define CAT_HPP
 
 # include <iostream>
 # include <string>
+# include "AAnimal.hpp"
+# include "Brain.hpp"
 
-class Animal
+class Cat : public AAnimal
 {
-	protected:
-				std::string	_type;
+	private:
+			Brain	*_brain;
 	public:
-			Animal(std::string type = "Animal");
-			Animal(Animal const &og);
-			virtual ~Animal();
-			Animal& operator=(Animal const &rhs);
-			std::string getType() const;
-			virtual void makeSound() const;
-			virtual void setIdea(int i, std::string val) = 0;
-			virtual std::string	getIdea(int i) = 0;
+			Cat(Cat &og);
+			Cat();
+			~Cat();
+			Cat		&operator=(Cat &rhs);
+			void	makeSound() const;
+			void	setIdea(int i, std::string val);
+			std::string	getIdea(int i);
 };
 
 #endif

@@ -43,10 +43,15 @@ int	main(void)
 	delete AnotherDog;
 
 	std::cout << "\n----- multiple animals -----\n";
-	const Animal* zoo[4] = { new Dog(), new Dog(), new Cat(), new Cat() };
+	Animal* zoo[4] = { new Dog(), new Dog(), new Cat(), new Cat() };
+	for ( int i = 0; i < 4; i++ ) {
+		zoo[i]->setIdea(0, "I love that I am a " + zoo[i]->getType());
+		std::cout << "animal " << i << ": " << zoo[i]->getIdea(0) << std::endl;
+	}
 	std::cout << "\n----- delete animals -----\n";
-    for ( int i = 0; i < 4; i++ ) {
-        delete zoo[i];
-    }
+	for ( int i = 0; i < 4; i++ )
+	{
+		delete (zoo[i]);
+	}
 	return (0);
 }
