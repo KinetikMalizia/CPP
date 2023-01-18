@@ -2,11 +2,11 @@
 NAME = out
 
 SRCS =	main.cpp Bureaucrat.cpp Form.cpp \
-		PresidentialPardonForm.cpp #RobotomyRequestForm.cpp ShrubbereyCreationForm.cpp
+		PresidentialPardonForm.cpp RobotomyRequestForm.cpp #ShrubbereyCreationForm.cpp
 
 OBJS = ${SRCS:.cpp=.o}
 
-CXX  = c++
+CXX  = g++
 
 RM  = rm -f
 

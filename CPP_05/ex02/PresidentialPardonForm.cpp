@@ -13,6 +13,11 @@ PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm &og):
 	std::cout << "Presidential Pardon form copy constructor called\n";
 }
 
+PresidentialPardonForm::~PresidentialPardonForm()
+{
+	std::cout << "Presidentail Pardon Form destructor called\n";
+}
+
 PresidentialPardonForm& PresidentialPardonForm::operator=(const PresidentialPardonForm &rhs)
 {
 	(void)rhs;
@@ -20,7 +25,9 @@ PresidentialPardonForm& PresidentialPardonForm::operator=(const PresidentialPard
 }
 
 std::string	PresidentialPardonForm::getTarget(void) const
-{return (this->_target);}
+{
+	return (this->_target);
+}
 
 void	PresidentialPardonForm::execute(Bureaucrat& executor) const
 {
