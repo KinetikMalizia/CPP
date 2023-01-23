@@ -6,7 +6,7 @@
 /*   By: fmalizia <fmalizia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 14:12:10 by fmalizia          #+#    #+#             */
-/*   Updated: 2023/01/23 14:37:40 by fmalizia         ###   ########.ch       */
+/*   Updated: 2023/01/23 15:04:06 by fmalizia         ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,25 +27,35 @@ Intern::~Intern()
 {
 	std::cout << "Intern destructor called\n";
 }
-
-Form* Intern::makeForm(std::string name, std::string target)
+static Form	*makePresident(const std::string target)
 {
-	std::string formNames[] = {
-		"robotomy request",
-		"presidential pardon",
-		"shrubbery creation"
-	};
-	Form*	forms[] = {
-		new RobotomyRequestForm( target ),
-		new PresidentialPardonForm( target ),
-		new ShrubberyCreationForm( target )
-	};
-	for ( int i(0); i < 3; i++ ) {
-		if ( name == formNames[i] ) {
-			std::cout << "Intern creates " << name << std::endl;
-			return forms[i];
+	return (new PresidentialPardonForm(target));
+}
+
+static Form	*makeRobot(const std::string target)
+{
+	return (new RobotomyRequestForm(target));
+}
+
+static Form	*makeShrubbery(const std::string target)
+{
+	return (new ShrubberyCreationForm(target));
+}
+
+Form	*Intern::makeForm(const std::string form_to_create, const std::string target_for_form)
+{
+	Form *(*all_forms[])(const std::string target) = {&makePresident, &makeRobot, &makeShrubbery};
+	std::string forms[] = {"presidential pardon", "robotomy request", "shrubbery creation"};
+
+	for (int i = 0; i < 3; i++)
+	{
+		if (form_to_create == forms[i])
+		{
+			std::cout << "Intern creates " << form_to_create << " now" << std::endl;
+			return (all_forms[i](target_for_form));
 		}
 	}
-	std::cout << "Intern cannot create " << name << " form" << std::endl;
-	return nullptr;
+
+	std::cout << "\033[33mIntern can not create a form called " << form_to_create << "\033[0m" << std::endl;
+	return (NULL);
 }
