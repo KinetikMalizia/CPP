@@ -2,10 +2,10 @@
 #include "Converter.hpp"
 
 Converter::Converter( void ) {
-    this->_c = '\0';
-    this->_n = 0;
-    this->_f = 0.0f;
-    this->_d = 0.0;
+	this->_c = '\0';
+	this->_n = 0;
+	this->_f = 0.0f;
+	this->_d = 0.0;
 }
 
 Converter::Converter( const Converter& src ) {
@@ -15,63 +15,63 @@ Converter::Converter( const Converter& src ) {
 Converter::~Converter( void ) {}
 
 Converter& Converter::operator=( const Converter& rhs ) {
-    if ( this != &rhs ) {
-        this->_n = rhs.getI();
-        this->_f = rhs.getF();
-        this->_c = rhs.getC();
-    }
-    return *this;
+	if ( this != &rhs ) {
+		this->_n = rhs.getI();
+		this->_f = rhs.getF();
+		this->_c = rhs.getC();
+	}
+	return *this;
 }
 
 char    Converter::getC( void ) const {
-    return this->_c;
+	return this->_c;
 }
 
 void    Converter::setC( char c ) {
-    this->_c = c;
+	this->_c = c;
 }
 
 bool    Converter::isLiterals( void ) const {
-    if ( ( _impossible ) || ( _str.compare( "nan" ) == 0 ) || ( _str.compare( "nanf" ) == 0 )
-        || ( _str.compare( "+inf" ) == 0 ) || ( _str.compare( "+inff" ) == 0 ) 
-        || ( _str.compare( "-inf" ) == 0 ) || ( _str.compare( "-inff" ) == 0 ) 
-        || ( _str.compare( "-inff" ) == 0 ) || ( _str.compare( "-inff" ) == 0 )  
-        || ( _str.compare( "+inff" ) == 0 ) || ( _str.compare( "+inff" ) == 0 ) ) {
-            return true;
-    } 
-    return false;
+	if ( ( _impossible ) || ( _str.compare( "nan" ) == 0 ) || ( _str.compare( "nanf" ) == 0 )
+		|| ( _str.compare( "+inf" ) == 0 ) || ( _str.compare( "+inff" ) == 0 ) 
+		|| ( _str.compare( "-inf" ) == 0 ) || ( _str.compare( "-inff" ) == 0 ) 
+		|| ( _str.compare( "-inff" ) == 0 ) || ( _str.compare( "-inff" ) == 0 )  
+		|| ( _str.compare( "+inff" ) == 0 ) || ( _str.compare( "+inff" ) == 0 ) ) {
+			return true;
+	} 
+	return false;
 }
 
-void    Converter::printChar( void ) const {
-    if ( this->isLiterals() || ( !std::isprint( _n ) && ( _n >= 127 ) ) ) {
-        std::cout << "Impossible";
-    } else if ( !std::isprint( this->_n ) ) {
-        std::cout << "None displayable";
-    } else {
-        std::cout << "'" << getC() << "'";
-    }
-    std::cout << std::endl;
+void	Converter::printChar( void ) const {
+	if ( this->isLiterals() || ( !std::isprint( _n ) && ( _n >= 127 ) ) ) {
+		std::cout << "Impossible";
+	} else if ( !std::isprint( this->_n ) ) {
+		std::cout << "None displayable";
+	} else {
+		std::cout << "'" << getC() << "'";
+	}
+	std::cout << std::endl;
 }
 
-int    Converter::getI( void ) const {
-    return this->_n;
+int	Converter::getI( void ) const {
+	return this->_n;
 }
 
-void    Converter::setI( int n ) {
-    this->_n = n;
+void	Converter::setI( int n ) {
+	this->_n = n;
 }
 
-void    Converter::printInt( void ) const {
-    if ( this->isLiterals() || ( !std::isprint( _n ) && ( _n >= 127 ) ) ) {
-        std::cout << "Impossible";
-    } else {
-        std::cout << getI();
-    }
-    std::cout << std::endl;
+void	Converter::printInt( void ) const {
+	if ( this->isLiterals() || ( !std::isprint( _n ) && ( _n >= 127 ) ) ) {
+		std::cout << "Impossible";
+	} else {
+		std::cout << getI();
+	}
+	std::cout << std::endl;
 }
 
-float   Converter::getF( void ) const {
-    return this->_f;
+float	Converter::getF( void ) const {
+	return this->_f;
 }
 
 void    Converter::setF( float f ) {
