@@ -27,11 +27,11 @@ char	Converter::getC( void ) const {
 	return this->_c;
 }
 
-void    Converter::setC( char c ) {
+void	Converter::setC( char c ) {
 	this->_c = c;
 }
 
-bool    Converter::isLiterals( void ) const {
+bool	Converter::isLiterals( void ) const {
 	if ( ( _impossible ) || ( _str.compare( "nan" ) == 0 ) || ( _str.compare( "nanf" ) == 0 )
 		|| ( _str.compare( "+inf" ) == 0 ) || ( _str.compare( "+inff" ) == 0 ) 
 		|| ( _str.compare( "-inf" ) == 0 ) || ( _str.compare( "-inff" ) == 0 ) 

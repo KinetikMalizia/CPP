@@ -5,7 +5,7 @@ SRCS =	main.cpp Converter.cpp
 
 OBJS = ${SRCS:.cpp=.o}
 
-CXX  = g++
+CXX  = c++
 
 RM  = rm -f
 
