@@ -28,20 +28,36 @@ class Span
 			std::list<int>	_list;
 			unsigned int	_size;
 	public:
-			Span(unsigned int N = 0);
+			Span(unsigned int N);
 			Span(Span& og);
 			~Span(void);
 			Span& operator=(Span &rhs);
 
+			unsigned int	getSize(void) const;
+
 			void	addNumber(int n);
-			
-			const 	std::list<int>* getList(void) const;
+			unsigned int longestSpan(void) const;
+			unsigned int shortestSpan(void) const;
+
+			const	std::list<int>* getList(void) const;
 			class MaxStorageReachedException : public std::exception {
 				virtual const char* what() const throw() { return "Max storage of span has been reached"; };
 			};
-			class NotEnoughNumbersException : public std::exception {
-				virtual const char* what() const throw() {return "Not enough numbers";};
+			class ListTooShortException : public std::exception {
+				virtual const char* what() const throw() {return "Not enough numbers in list";};
 			};
+
+			template<typename II>
+			void			addNumbers( II begin, II end )
+			{
+				unsigned int	d = std::distance(begin, end);
+
+				if ( d > (this->_size - this->_list.size()))
+					throw Span::MaxStorageReachedException();
+				this->_list.insert(this->_list.end(), begin, end);
+			}
 };
+
+std::ostream& operator<<( std::ostream&, const Span& );
 
 #endif

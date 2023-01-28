@@ -9,7 +9,7 @@ Converter::Converter( void ) {
 }
 
 Converter::Converter( const Converter& src ) {
-    *this = src;
+	*this = src;
 }
 
 Converter::~Converter( void ) {}
@@ -23,7 +23,7 @@ Converter& Converter::operator=( const Converter& rhs ) {
 	return *this;
 }
 
-char    Converter::getC( void ) const {
+char	Converter::getC( void ) const {
 	return this->_c;
 }
 
