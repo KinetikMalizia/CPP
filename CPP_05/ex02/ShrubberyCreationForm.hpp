@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fmalizia <fmalizia@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/01/30 10:26:43 by fmalizia          #+#    #+#             */
+/*   Updated: 2023/01/30 10:26:43 by fmalizia         ###   ########.ch       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef SHRUBBERYCREATIONFORM_HPP
 # define SHRUBBERYCREATIONFORM_HPP
 
@@ -22,6 +34,5 @@ class ShrubberyCreationForm : public Form
 			void	execute(Bureaucrat &executor) const;
 			void	executeAction() const;
 };
-
 
 #endif
