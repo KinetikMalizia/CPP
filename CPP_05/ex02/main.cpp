@@ -45,6 +45,16 @@ int	main(void)
 	
 	try
 	{
+		f->beSigned(*hand);
+		hand->executeForm(*f);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << "err 2: " << e.what() << '\n';
+	}
+
+	try
+	{
 		f->execute(*chief);
 	}
 	catch(const std::exception& e)
