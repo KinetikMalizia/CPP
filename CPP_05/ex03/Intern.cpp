@@ -6,7 +6,7 @@
 /*   By: fmalizia <fmalizia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 14:12:10 by fmalizia          #+#    #+#             */
-/*   Updated: 2023/01/31 12:00:47 by fmalizia         ###   ########.ch       */
+/*   Updated: 2023/01/31 12:02:17 by fmalizia         ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ Intern::~Intern()
 Intern& Intern::operator=(Intern& rhs)
 {
 	std::cout << "Ummm.... What are you trying to do?\n";
+	(void)rhs;
 	return (*this);
 }
 
