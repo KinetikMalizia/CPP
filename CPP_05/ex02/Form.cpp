@@ -15,9 +15,9 @@
 Form::Form(std::string name, int s, int e): _name(name), _signed(0), _s_grade(s), _e_grade(e)
 {
 	if ( _s_grade < 1 )
-		throw Bureaucrat::GradeTooHighException();
+		throw Form::GradeTooHighException();
 	if ( _s_grade > 150 )
-		throw Bureaucrat::GradeTooLowException();
+		throw Form::GradeTooLowException();
 	std::cout << "Default form constructor called: " << _name << ", " << _signed << ", " << _s_grade << ", " << _e_grade << "\n";
 }
 
@@ -61,7 +61,7 @@ int	Form::getEGrade(void) const
 void	Form::beSigned(Bureaucrat &signer)
 {
 	if (signer.getGrade() > this->_s_grade)
-		throw Bureaucrat::GradeTooLowException();
+		throw Form::GradeTooLowException();
 	this->_signed = 1;
 }
 

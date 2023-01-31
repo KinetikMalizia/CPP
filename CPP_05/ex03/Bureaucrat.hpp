@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: fmalizia <fmalizia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/30 10:27:02 by fmalizia          #+#    #+#             */
-/*   Updated: 2023/01/30 10:27:02 by fmalizia         ###   ########.ch       */
+/*   Created: 2023/01/30 10:25:39 by fmalizia          #+#    #+#             */
+/*   Updated: 2023/01/30 10:25:39 by fmalizia         ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ class Bureaucrat
 			void		decrementGrade();
 
 			void		signForm(Form &form);
+			void		executeForm(Form const & form);
 
 			/*Exception classes*/
 			class GradeTooHighException : public std::exception

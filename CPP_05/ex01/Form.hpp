@@ -37,6 +37,17 @@ class Form
 			int getEGrade() const;
 
 			void	beSigned(Bureaucrat &signer);
+
+			class GradeTooHighException : public std::exception
+			{
+				public:
+					virtual const char* what() const throw() { return "Grade too high"; }
+			};
+			class GradeTooLowException : public std::exception
+			{
+				public:
+					virtual const char* what() const throw() { return "Grade too low"; }
+			};
 };
 
 std::ostream&	operator<<( std::ostream& o, const Form& rhs );

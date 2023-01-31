@@ -6,7 +6,7 @@
 /*   By: fmalizia <fmalizia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 14:12:13 by fmalizia          #+#    #+#             */
-/*   Updated: 2023/01/30 10:29:01 by fmalizia         ###   ########.ch       */
+/*   Updated: 2023/01/31 11:58:06 by fmalizia         ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ class Intern
 			Intern(Intern &og);
 			Intern();
 			~Intern();
+
+			Intern& operator=(Intern& rhs);
 
 			Form	*makeForm(std::string name, std::string target);
 };

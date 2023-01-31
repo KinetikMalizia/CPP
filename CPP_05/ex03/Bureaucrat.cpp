@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: fmalizia <fmalizia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/30 10:26:57 by fmalizia          #+#    #+#             */
-/*   Updated: 2023/01/30 10:26:57 by fmalizia         ###   ########.ch       */
+/*   Created: 2023/01/30 10:25:35 by fmalizia          #+#    #+#             */
+/*   Updated: 2023/01/30 10:25:35 by fmalizia         ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,19 @@ void	Bureaucrat::signForm(Form &form)
 		std::cerr << *this << "couldn't sign " << form.getName() << " because: " << e.what() << '\n';
 	}
 	
+}
+
+void	Bureaucrat::executeForm(Form const& form)
+{
+	try
+	{
+		form.execute(*this);
+		std::cout << "Bureaucrat: " << this->_name << " couldn't execute form: " << form.getName() << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << "Form couldn't be executed because: " << e.what() << '\n';
+	}
 }
 
 std::ostream	&operator<<(std::ostream &o, Bureaucrat &a)
