@@ -42,7 +42,7 @@ int	main(void)
 	{
 		std::cerr << "err 2: " << e.what() << '\n';
 	}
-	
+	std::cout << "------Execute Form-------\n\n";
 	try
 	{
 		f->beSigned(*hand);
@@ -52,6 +52,9 @@ int	main(void)
 	{
 		std::cerr << "err 2: " << e.what() << '\n';
 	}
+
+	hand->executeForm(*f);
+	chief->executeForm(*f);
 
 	try
 	{
