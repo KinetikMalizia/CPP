@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Base.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fmalizia <fmalizia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/25 16:02:52 by jcarlen           #+#    #+#             */
-/*   Updated: 2023/02/01 15:06:01 by fmalizia         ###   ########.ch       */
+/*   Created: 2023/01/27 15:39:05 by jcarlen           #+#    #+#             */
+/*   Updated: 2023/02/01 15:29:49 by fmalizia         ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Converter.hpp"
-#include <iostream>
+#ifndef BASE_HPP
+#define BASE_HPP
 
-int main(int ac, char **av)
+
+class Base
 {
+	public:
+			virtual ~Base();
+			Base * generate(void);
+			void identify(Base* p);
+			void identify(Base& p);
+};
 
-	if (ac != 2)
-	{
-		std::cout << "Wrong syntax." << std::endl;
-		return 0;
-	}
+class A : public Base {};
+class B : public Base {};
+class C : public Base {};
 
-	Converter value(av[1]);
-	std::string	line(av[1]);
-
-	value.Convert(line);
-}
+#endif

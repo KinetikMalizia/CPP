@@ -1,5 +1,16 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: fmalizia <fmalizia@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2023/01/19 14:03:30 by jcarlen           #+#    #+#              #
+#    Updated: 2023/02/01 15:29:54 by fmalizia         ###   ########.ch        #
+#                                                                              #
+# **************************************************************************** #
 
-NAME = out
+NAME = convert
 
 SRCS =	main.cpp Converter.cpp
 
@@ -22,10 +33,10 @@ clean:
 fclean:		clean
 		$(RM) $(NAME)
 
-run: $(NAME)
-	@./out
-	@ make fclean
-
 re:		fclean all
 
-.PHONY:	all clean fclean re run
+run: $(NAME)
+	@./out
+	@make fclean
+
+.PHONY:	all clean fclean re 

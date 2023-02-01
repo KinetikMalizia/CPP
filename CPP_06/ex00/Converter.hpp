@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Converter.hpp                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fmalizia <fmalizia@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/01/25 16:02:57 by jcarlen           #+#    #+#             */
+/*   Updated: 2023/02/01 15:05:57 by fmalizia         ###   ########.ch       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef CONVERTER_HPP
 # define CONVERTER_HPP
 
@@ -6,74 +18,28 @@
 # include <limits>
 # include <string>
 
-enum e_type {
-    NONE,
-    INT,
-    FLOAT,
-    CHAR,
-    DOUBLE,
-    LITERALS
+class Converter
+{
+	private:
+			const std::string	_value;
+			int		Cint();
+			char 	Cchar();
+			float	Cfloat();
+			double 	Cdouble();
+
+
+	public:
+			Converter();
+			~Converter();
+			Converter(const std::string& value);
+			Converter(Converter &og);
+			Converter	&operator=(Converter const &rhs);
+
+
+			void	Print_1(std::string av);
+			void	Print_2(std::string av);
+			void 	Convert(std::string av);
+
 };
-
-class Converter {
-
-private:
-    char    _c;
-    int     _n;
-    float   _f;
-    double  _d;
-
-    bool    _impossible;
-
-    std::string _str;
-    e_type      _type;
-
-public:
-    Converter( void );
-    Converter( const Converter& src );
-    ~Converter( void );
-
-    Converter& operator=( const Converter& rhs );
-
-    char    getC( void ) const;
-    void    setC( char c );
-
-    int     getI( void ) const;
-    void    setI( int n );
-
-    float   getF( void ) const;
-    void    setF( float f );
-
-    double  getD( void ) const;
-    void    setD( double d );
-
-    void    convert( void );
-
-    void    setStr( std::string str );
-    std::string    getStr( void ) const;
-
-    e_type  getType( void ) const;
-    void    setType( void );
-
-    bool    isChar( void ) const;
-    bool    isInt( void ) const;
-    bool    isFloat( void ) const;
-    bool    isDouble( void ) const;
-
-    bool    isImpossible( void );
-
-    void    printChar( void ) const ;
-    void    printInt( void ) const ;
-    void    printFloat( void ) const ;
-    void    printDouble( void ) const ;
-
-    bool    isLiterals( void ) const;
-
-    class ConverterException : public std::exception {
-        virtual const char* what() const throw() { return "Unknown type"; }
-    };
-};
-
-std::ostream& operator<<( std::ostream& out, const Converter& rhs );
 
 #endif
