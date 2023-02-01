@@ -71,4 +71,6 @@ void ShrubberyCreationForm::executeAction() const
 	out << "       |o|        | |         | |         " << std::endl;
 	out << "       |.|        | |         | |         " << std::endl;
 	out << "    ||/ ._|//_/__/  ,|_//__||/.  |_//__/_ " << std::endl;
+
+	out.close();
 }

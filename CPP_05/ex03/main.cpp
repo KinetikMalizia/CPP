@@ -21,7 +21,8 @@ int	main(void)
 {
 	Intern someRandomIntern;
 	Form* rrf;
+	Form* ffs;
 	rrf = someRandomIntern.makeForm("robotomy request", "Bender");
-	rrf = someRandomIntern.makeForm("bloublou", "bob");
+	ffs = someRandomIntern.makeForm("bloublou", "bob");
 	delete rrf;
 }

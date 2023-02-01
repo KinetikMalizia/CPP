@@ -50,7 +50,7 @@ int	main(void)
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << "err 2: " << e.what() << '\n';
+		std::cerr << "err 3: " << e.what() << '\n';
 	}
 
 	hand->executeForm(*f);
@@ -62,7 +62,7 @@ int	main(void)
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << "err 3: " << e.what() << '\n';
+		std::cerr << "err 4: " << e.what() << '\n';
 	}
 	std::cout << "\n\n\n\n";
 	try
@@ -76,7 +76,7 @@ int	main(void)
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << "err 4: " << e.what() << '\n';
+		std::cerr << "err 5: " << e.what() << '\n';
 	}
 	std::cout << "\n\n\n\n";
 	try
@@ -86,7 +86,7 @@ int	main(void)
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << "err 5: "<< e.what() << '\n';
+		std::cerr << "err 6: "<< e.what() << '\n';
 	}
 	std::cout << "\n\n\n\n";
 	delete chief;
