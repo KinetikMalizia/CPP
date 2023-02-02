@@ -22,7 +22,12 @@ template <typename T> class Array
 			unsigned int	_size;
 	public:
 			Array(void):  _ptr(new T()), _size(0){std::cout << "Default constructor\n";};
-			Array(unsigned int n): _ptr(new T[n]), _size(n){std::cout << "Sized constructor\n";};
+			Array(unsigned int n): _ptr(new T[n]), _size(n)
+			{
+				for (unsigned int i=0; i < this->_size; i++)
+					_ptr[i] = 0;
+				std::cout << "Sized constructor\n";
+			};
 			Array(Array &og): _ptr(new T[og.size()]), _size(og.size())
 			{
 				for (unsigned int i=0; i < this->_size; i++)
