@@ -6,7 +6,7 @@
 /*   By: fmalizia <fmalizia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 14:36:07 by fmalizia          #+#    #+#             */
-/*   Updated: 2023/01/26 17:01:17 by fmalizia         ###   ########.ch       */
+/*   Updated: 2023/02/06 12:30:21 by fmalizia         ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,12 @@ template <typename T> class Array
 			unsigned int	_size;
 	public:
 			Array(void):  _ptr(new T()), _size(0){std::cout << "Default constructor\n";};
-			Array(unsigned int n): _ptr(new T[n]), _size(n){std::cout << "Sized constructor\n";};
+			Array(unsigned int n): _ptr(new T[n]), _size(n)
+			{
+				for (unsigned int i=0; i < this->_size; i++)
+					this->_ptr[i] = 0;
+				std::cout << "Sized constructor\n";
+			};
 			Array(Array &og): _ptr(new T[og.size()]), _size(og.size())
 			{
 				for (unsigned int i=0; i < this->_size; i++)
@@ -47,7 +52,7 @@ template <typename T> class Array
 			T &operator[](unsigned int n)
 			{
 				if (n >= this->_size)
-					throw std::out_of_range("SIZE IS OUT OF RANGE");
+					throw std::out_of_range("INDEX IS OUT OF RANGE");
 				else
 					return (this->_ptr[n]);
 			};
