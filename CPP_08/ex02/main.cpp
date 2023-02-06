@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fmalizia <fmalizia@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/06 14:10:58 by fmalizia          #+#    #+#             */
+/*   Updated: 2023/02/06 14:10:58 by fmalizia         ###   ########.ch       */
+/*                                                                            */
+/* ************************************************************************** */
+
 
 #include "MutantStack.hpp"
 
@@ -18,7 +30,6 @@ int main()
 	mstack.push(3);
 	mstack.push(5);
 	mstack.push(737);
-	//[...]
 	mstack.push(0);
 
 	MutantStack<int>::iterator it = mstack.begin();
