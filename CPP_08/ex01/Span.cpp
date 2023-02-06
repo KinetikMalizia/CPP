@@ -6,7 +6,7 @@
 /*   By: fmalizia <fmalizia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 10:12:32 by fmalizia          #+#    #+#             */
-/*   Updated: 2023/01/27 15:55:28 by fmalizia         ###   ########.ch       */
+/*   Updated: 2023/02/06 13:55:50 by fmalizia         ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,14 +56,14 @@ unsigned int	Span::getSize(void) const
 
 unsigned int	Span::longestSpan(void) const
 {
-	if (this->_size < 2)
+	if (this->_list.size() < 2)
 		throw Span::ListTooShortException();
 	return (*std::max_element(_list.begin(), _list.end()) - *std::min_element(_list.begin(), _list.end()));
 }
 
 unsigned int	Span::shortestSpan(void) const
 {
-	if (this->_size < 2)
+	if (this->_list.size() < 2)
 		throw Span::ListTooShortException();
 	unsigned int	min = this->longestSpan();
 	for ( std::list<int>::const_iterator it = _list.begin(); it != _list.end(); ++it )

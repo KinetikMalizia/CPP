@@ -6,7 +6,7 @@
 /*   By: fmalizia <fmalizia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 10:12:30 by fmalizia          #+#    #+#             */
-/*   Updated: 2023/01/27 15:55:28 by fmalizia         ###   ########.ch       */
+/*   Updated: 2023/02/06 13:59:57 by fmalizia         ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ class Span
 			std::list<int>	_list;
 			unsigned int	_size;
 	public:
-			Span(unsigned int N);
+			Span(unsigned int N = 0);
 			Span(Span& og);
 			~Span(void);
 			Span& operator=(Span &rhs);
