@@ -25,7 +25,11 @@ template <typename T> class Array
 			Array(unsigned int n): _ptr(new T[n]), _size(n)
 			{
 				for (unsigned int i=0; i < this->_size; i++)
+<<<<<<< HEAD
 					this->_ptr[i] = 0;
+=======
+					_ptr[i] = 0;
+>>>>>>> 1d2b6f25b816e9bd2d260f44b905d20fea9378df
 				std::cout << "Sized constructor\n";
 			};
 			Array(Array &og): _ptr(new T[og.size()]), _size(og.size())
