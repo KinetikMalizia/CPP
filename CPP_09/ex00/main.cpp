@@ -6,7 +6,7 @@
 /*   By: fmalizia <fmalizia@students.42lausanne.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 15:13:53 by fmalizia          #+#    #+#             */
-/*   Updated: 2023/03/24 14:33:58 by fmalizia         ###   ########.fr       */
+/*   Updated: 2023/03/24 15:30:41 by fmalizia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,7 @@ int	main(int ac, char **av)
 
 	if (ex.fill_data())
 		return (1);
-	if (ex.check_date("2000-02-29"))
-		std::cout << "ERROR!\n";
+	ex.print_map();
 	input.close();
 	return (0);
 }
