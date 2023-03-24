@@ -6,7 +6,7 @@
 /*   By: fmalizia <fmalizia@students.42lausanne.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 15:05:46 by fmalizia          #+#    #+#             */
-/*   Updated: 2023/03/24 15:35:00 by fmalizia         ###   ########.fr       */
+/*   Updated: 2023/03/24 18:23:14 by fmalizia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ int	Exchange::fill_data(void)
 	std::string line;
 	std::string date;
 	std::string val;
+	int i = 2;
 	
 	database.open("data.csv");
 	if (!database)
@@ -47,13 +48,34 @@ int	Exchange::fill_data(void)
 		date = line.substr(0, 10);
 		if (check_date(date))
 		{
-			std::cout << "Error in database\n";
+			std::cout << "Error in database, this date doesn't exist [" << date << "] (line: "<< i << ")\n";
 			return (1);
 		}
 		val = line.substr(11, 16);
 		this->data[date] = atof(val.c_str());
+		++i;
 	}
 	database.close();
+	return (0);
+}
+
+int	Exchange::run_input(char *file)
+{
+	std::ifstream	input;
+	std::string		line;
+
+	input.open(file);
+	if (!input)
+	{
+		std::cout << "Unable to open " << file << std::endl;
+		return (1);
+	}
+	std::getline(input, line);
+	while (std::getline(input, line))
+	{
+		 
+	}
+	input.close();
 	return (0);
 }
 
