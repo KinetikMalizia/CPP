@@ -6,7 +6,7 @@
 /*   By: fmalizia <fmalizia@students.42lausanne.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 15:05:46 by fmalizia          #+#    #+#             */
-/*   Updated: 2023/03/25 17:17:11 by fmalizia         ###   ########.fr       */
+/*   Updated: 2023/03/25 17:32:01 by fmalizia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ int	Exchange::fill_data(void)
 		this->data[date] = atof(val.c_str());
 		++i;
 	}
+	this->last_date = date;
 	database.close();
 	return (0);
 }
@@ -107,28 +108,17 @@ double	Exchange::find_closest_date(std::string date)
 	std::map<std::string, double>::iterator itr = this->data.begin();
 	std::string	closest = itr->first;
 	std::string	prev = "1000-01-01";
-	int	y,m,d;
-	y = atoi(date.substr(0,4).c_str());
-	m = atoi(date.substr(5,2).c_str());
-	d = atoi(date.substr(8,2).c_str());
-	if (y < 2009)
+	if (cmp_dates(date, closest) < 0)
 	{
 		std::cout << "!!Date before start of database!! ";
 		return (0);
 	}
-	while (y > atoi(closest.substr(0,4).c_str()))
+	if (cmp_dates(date, this->last_date) > 0)
 	{
-		prev = itr->first;
-		itr++;
-		closest = itr->first;
+		std::cout << "!!Date after end of database!! ";
+		return (this->data.find(last_date)->second);
 	}
-	while (m > atoi(closest.substr(5,2).c_str()))
-	{
-		prev = itr->first;
-		itr++;
-		closest = itr->first;
-	}
-	while (d > atoi(closest.substr(8,2).c_str()))
+	while (cmp_dates(date, closest) > 0)
 	{
 		prev = itr->first;
 		itr++;

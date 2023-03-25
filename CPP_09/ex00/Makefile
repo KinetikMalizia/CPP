@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: fmalizia <fmalizia@student.42.fr>          +#+  +:+       +#+         #
+#    By: fmalizia <fmalizia@students.42lausanne.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/23 14:39:40 by fmalizia          #+#    #+#              #
-#    Updated: 2023/03/23 17:04:13 by fmalizia         ###   ########.ch        #
+#    Updated: 2023/03/25 17:36:01 by fmalizia         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,7 +34,7 @@ fclean:		clean
 
 run: $(NAME)
 	@printf "\noutput\n\n"
-	@./out
+	@./$(NAME)
 	@printf "\n\n\n"
 	@ make fclean
 
