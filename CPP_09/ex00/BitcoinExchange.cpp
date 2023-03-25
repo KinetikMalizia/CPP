@@ -6,7 +6,7 @@
 /*   By: fmalizia <fmalizia@students.42lausanne.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 15:05:46 by fmalizia          #+#    #+#             */
-/*   Updated: 2023/03/24 18:23:14 by fmalizia         ###   ########.fr       */
+/*   Updated: 2023/03/25 17:17:11 by fmalizia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,9 @@ int	Exchange::run_input(char *file)
 {
 	std::ifstream	input;
 	std::string		line;
+	std::string		date;
+	std::string		value;
+	double			amount;
 
 	input.open(file);
 	if (!input)
@@ -73,7 +76,18 @@ int	Exchange::run_input(char *file)
 	std::getline(input, line);
 	while (std::getline(input, line))
 	{
-		 
+		date = line.substr(0,10);
+		if (check_date(date))
+		{
+			std::cout << "Error: bad input => " << date << std::endl;
+			continue;
+		}
+		value = line.substr(13,5);
+		amount = atof(value.c_str());
+		if (check_amount(amount))
+			continue;
+		amount = amount * find_closest_date(date);
+		std::cout << date << " => " << value << " = " << amount << std::endl;
 	}
 	input.close();
 	return (0);
@@ -86,6 +100,58 @@ void	Exchange::print_map(void)
 	{
 		std::cout<<(*iter).first<<"\t"<<(*iter).second<<"\n";
 	}
+}
+
+double	Exchange::find_closest_date(std::string date)
+{
+	std::map<std::string, double>::iterator itr = this->data.begin();
+	std::string	closest = itr->first;
+	std::string	prev = "1000-01-01";
+	int	y,m,d;
+	y = atoi(date.substr(0,4).c_str());
+	m = atoi(date.substr(5,2).c_str());
+	d = atoi(date.substr(8,2).c_str());
+	if (y < 2009)
+	{
+		std::cout << "!!Date before start of database!! ";
+		return (0);
+	}
+	while (y > atoi(closest.substr(0,4).c_str()))
+	{
+		prev = itr->first;
+		itr++;
+		closest = itr->first;
+	}
+	while (m > atoi(closest.substr(5,2).c_str()))
+	{
+		prev = itr->first;
+		itr++;
+		closest = itr->first;
+	}
+	while (d > atoi(closest.substr(8,2).c_str()))
+	{
+		prev = itr->first;
+		itr++;
+		closest = itr->first;
+	}
+	if (date.compare(closest))
+		closest = prev;
+	return(this->data.find(closest)->second);
+}
+
+int	check_amount(double value)
+{
+	if (value < 0)
+	{
+		std::cout << "Error: not a positive number\n";
+		return (1);
+	}
+	if (value > 1000)
+	{
+		std::cout << "Error: too large a number\n";
+		return (1);
+	}
+	return (0);
 }
 
 int	check_date(std::string date)
@@ -125,3 +191,23 @@ bool isDateValid( int y, int m, int d )
 	return true;
 }
 
+int	cmp_dates(std::string da1, std::string da2)
+{
+	int	y1,m1,d1;
+	int	y2,m2,d2;
+	y1 = atoi(da1.substr(0,4).c_str());
+	m1 = atoi(da1.substr(5,2).c_str());
+	d1 = atoi(da1.substr(8,2).c_str());
+	y2 = atoi(da2.substr(0,4).c_str());
+	m2 = atoi(da2.substr(5,2).c_str());
+	d2 = atoi(da2.substr(8,2).c_str());
+	if (y1 < y2)
+		return (-1);
+	if (y1 == y2 && m1 < m2)
+		return (-1);
+	if (y1 == y2 && m1 == m2 && d1 < d2)
+		return (-1);
+	if (y1 == y2 && m1 == m2 && d1 == d2)
+		return (0);
+	return (1);
+}

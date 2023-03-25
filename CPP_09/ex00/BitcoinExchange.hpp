@@ -6,7 +6,7 @@
 /*   By: fmalizia <fmalizia@students.42lausanne.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 15:02:54 by fmalizia          #+#    #+#             */
-/*   Updated: 2023/03/24 18:10:14 by fmalizia         ###   ########.fr       */
+/*   Updated: 2023/03/25 17:12:34 by fmalizia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ class Exchange
 {
 	private:
 			std::map<std::string, double> data;
-			std::pair<std::string, double> input;
 	public:
 		Exchange();
 		Exchange(Exchange &og);
@@ -32,7 +31,10 @@ class Exchange
 		int		fill_data(void);
 		int		run_input(char *file);
 		void	print_map(void);
+		double	find_closest_date(std::string date);
 };
 
+int	check_amount(double value);
 int	check_date(std::string date);
 bool isDateValid( int y, int m, int d );
+int	cmp_dates(std::string d1, std::string d2);
