@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <PmergeMe.hpp>
+#include "PmergeMe.hpp"
 
 int	main(int ac, char **av)
 {
@@ -23,9 +23,19 @@ int	main(int ac, char **av)
 		return (1);
 	}
 	str = av[1];
-	for (int i = 0; av[i]; ++i)
+	for (int i = 0; str[i]; ++i)
 	{
+		if (str[i] == ' ')
+			continue;
+		if (str[i] == '-' && str[i + 1] && std::isdigit(str[i+1]))
+			continue;
 		if (std::isdigit(str[i]))
-			cont.add_num();
+			continue;
+		std::cout << "Unkown symbol in input!\n";
+		return (1);
 	}
+	cont.fill_cont(str);
+	cont.print_vec();
+	std::cout << "DEQUE\n";
+	cont.print_deq();
 }

@@ -28,5 +28,8 @@ class PmergeMe
 		~PmergeMe();
 
 		void	add_num(int x);
+		void	fill_cont(std::string str);
+		void	print_vec();
+		void	print_deq();
 };
 
