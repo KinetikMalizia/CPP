@@ -64,3 +64,20 @@ void	PmergeMe::print_deq(void)
 		std::cout << *itr << std::endl;
 	}
 }
+
+double	PmergeMe::sort_vec(void)
+{
+	time_t	start, end;
+
+	start = std::clock();
+	for (int i = 0; i < 100000; ++i)
+	{
+		std::cout << "wait... ";
+	}
+	std::cout << std::endl;
+	end = std::clock();
+	return ((double)(end-start) / (double)CLOCKS_PER_SEC);
+	
+}
+
+//0.078125

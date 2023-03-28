@@ -17,6 +17,7 @@
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
+#include <iomanip>
 
 class PmergeMe
 {
@@ -31,5 +32,7 @@ class PmergeMe
 		void	fill_cont(std::string str);
 		void	print_vec();
 		void	print_deq();
+		double	sort_vec();
+		//double	sort_deq();
 };
 

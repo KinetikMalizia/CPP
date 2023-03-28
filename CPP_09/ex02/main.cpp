@@ -35,7 +35,11 @@ int	main(int ac, char **av)
 		return (1);
 	}
 	cont.fill_cont(str);
-	cont.print_vec();
+	std::cout << cont.sort_vec() << std::setprecision(5);
+	std::cout << " sec\n";
+
+
+	/* cont.print_vec();
 	std::cout << "DEQUE\n";
-	cont.print_deq();
+	cont.print_deq(); */
 }
