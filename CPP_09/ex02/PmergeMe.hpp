@@ -16,6 +16,7 @@
 #include <deque>
 #include <iostream>
 #include <cstdlib>
+#include <ctime>
 
 class PmergeMe
 {
@@ -25,5 +26,7 @@ class PmergeMe
 	public:
 		PmergeMe();
 		~PmergeMe();
+
+		void	add_num(int x);
 };
 

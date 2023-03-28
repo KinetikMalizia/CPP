@@ -19,5 +19,11 @@ PmergeMe::PmergeMe()
 
 PmergeMe::~PmergeMe()
 {
-	
+
+}
+
+void	PmergeMe::add_num(int x)
+{
+	this->vec.push_back(x);
+	this-> deq.push_back(x);
 }
