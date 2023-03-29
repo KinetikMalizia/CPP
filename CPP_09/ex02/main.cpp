@@ -35,7 +35,9 @@ int	main(int ac, char **av)
 		return (1);
 	}
 	cont.fill_cont(str);
-	std::cout << cont.sort_vec() << std::setprecision(5);
+	std::cout << cont.get_vec_size() << std::endl;
+	cont.print_vec();
+	// std::cout << cont.sort_vec() << std::setprecision(5);
 	std::cout << " sec\n";
 
 

@@ -29,7 +29,7 @@ int	main(int ac, char **av)
 	float				n1;
 	float				n2;
 
-	if (ac != 2)
+	if (ac != 2 || av[1][0] == '\0')
 	{
 		std::cout << "WRONG FORMAT!\n";
 		return (1);
@@ -65,7 +65,8 @@ int	main(int ac, char **av)
 			return (1);
 		}
 	}
-	std::cout << stack.top();
+	if (stack.size() > 0)
+		std::cout << stack.top();
 	if (stack.size() > 1)
 		std::cout << " ...there are extra numbers in the calculation by the way";
 	std::cout << std::endl;

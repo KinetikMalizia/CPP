@@ -33,6 +33,7 @@ class PmergeMe
 		void	print_vec();
 		void	print_deq();
 		double	sort_vec();
+		int		get_vec_size();
 		//double	sort_deq();
 };
 

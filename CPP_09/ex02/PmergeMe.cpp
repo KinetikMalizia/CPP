@@ -39,7 +39,8 @@ void	PmergeMe::fill_cont(std::string str)
 		cut = str.substr(start, end - start);
 		start = end + 1;
 		end = str.find(' ', start);
-		this->add_num(std::atoi(cut.c_str()));
+		if (cut[0] != '\0')
+			this->add_num(std::atoi(cut.c_str()));
 	}
 	cut = str.substr(start, end - start);
 	this->add_num(std::atoi(cut.c_str()));
@@ -78,6 +79,11 @@ double	PmergeMe::sort_vec(void)
 	end = std::clock();
 	return ((double)(end-start) / (double)CLOCKS_PER_SEC);
 	
+}
+
+int	PmergeMe::get_vec_size(void)
+{
+	return (this->vec.size());
 }
 
 //0.078125
