@@ -78,21 +78,53 @@ void	PmergeMe::print_deq(void)
 
 	for (itr = this->deq.begin(); itr != this->deq.end(); itr++)
 	{
-		std::cout << *itr << std::endl;
+		std::cout << *itr << " ";
 	}
+	std::cout << std::endl;
 }
 
-double	PmergeMe::sort_vec(void)
+
+void	PmergeMe::print_deq5(void)
+{
+	std::deque<int>::iterator itr;
+	int	d_limit = d_limit = deq.size();
+
+	if (this->deq.size() > 5)
+		d_limit = 5;
+
+	for (itr = this->deq.begin(); itr != this->deq.begin() + d_limit; itr++)
+	{
+		std::cout << *itr << " ";
+	}
+	if (this->deq.size() > 5)
+		std::cout << "[...]";
+	std::cout << "\n";
+}
+
+float	PmergeMe::sort_vec(void)
 {
 	time_t	start, end;
 	std::vector<int> *temp_vec = new std::vector<int>(3000);
 
 	start = std::clock();
 
-	mergesort(this->vec, *temp_vec,0,this->vec.size()-1, 3);
+	mergesort_v(this->vec, *temp_vec,0,this->vec.size()-1, 5);
 
 	end = std::clock();
-	return ((double)(end-start) / (double)CLOCKS_PER_SEC);
+	return ((float)(end-start) / (float)CLOCKS_PER_SEC);
+}
+
+float	PmergeMe::sort_deq(void)
+{
+	time_t	start, end;
+	std::deque<int> *temp_vec = new std::deque<int>(3000);
+
+	start = std::clock();
+
+	mergesort_q(this->deq, *temp_vec,0,this->deq.size()-1, 5);
+
+	end = std::clock();
+	return ((float)(end-start) / (float)CLOCKS_PER_SEC);
 }
 
 int	PmergeMe::get_vec_size(void)

@@ -33,11 +33,16 @@ class PmergeMe
 		void	print_vec();
 		void	print_vec5();
 		void	print_deq();
-		double	sort_vec();
+		void	print_deq5();
+		float	sort_vec();
 		int		get_vec_size();
-		//double	sort_deq();
+		float	sort_deq();
 };
 
-void	insertion_sort(std::vector<int>&array, int l, int r);
-void	merge(std::vector<int> &arr, std::vector<int> &temp, int l, int m, int r);
-void	mergesort(std::vector<int> &arr, std::vector<int> &temp, int l, int r, int threshold);
+void	insertion_sort_v(std::vector<int>&array, int l, int r);
+void	merge_v(std::vector<int> &arr, std::vector<int> &temp, int l, int m, int r);
+void	mergesort_v(std::vector<int> &arr, std::vector<int> &temp, int l, int r, int threshold);
+
+void insertion_sort_q(std::deque<int> &array, int l, int r);
+void merge_q(std::deque<int> &arr, std::deque<int> &temp, int l, int m, int r);
+void mergesort_q(std::deque<int> &arr, std::deque<int> &temp, int l, int r, int threshold);

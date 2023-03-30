@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort.cpp                                           :+:      :+:    :+:   */
+/*   sort_vector.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fmalizia <fmalizia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 15:17:08 by fmalizia          #+#    #+#             */
-/*   Updated: 2023/03/30 15:50:51 by fmalizia         ###   ########.ch       */
+/*   Updated: 2023/03/30 16:37:39 by fmalizia         ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PmergeMe.hpp"
 
-void insertion_sort(std::vector<int>&array, int l, int r)
+void insertion_sort_v(std::vector<int>&array, int l, int r)
 {
 	for (int i = l; i <= r; i++)
 	{
@@ -27,7 +27,7 @@ void insertion_sort(std::vector<int>&array, int l, int r)
 	}
 }
 
-void merge(std::vector<int> &arr, std::vector<int> &temp, int l, int m, int r)
+void merge_v(std::vector<int> &arr, std::vector<int> &temp, int l, int m, int r)
 {
 	int i = l;
 	int j = m + 1;
@@ -57,18 +57,18 @@ void merge(std::vector<int> &arr, std::vector<int> &temp, int l, int m, int r)
 			arr[i] = temp[i];
 }
 
-void mergesort(std::vector<int> &arr, std::vector<int> &temp, int l, int r, int threshold)
+void mergesort_v(std::vector<int> &arr, std::vector<int> &temp, int l, int r, int threshold)
 {
 	if (l < r)
 	{
 		if ((r - l) <= threshold)
-			insertion_sort(arr, l, r);
+			insertion_sort_v(arr, l, r);
 		else
 		{
 			int m = (l + r) / 2;
-			mergesort(arr, temp, l, m, threshold);
-			mergesort(arr, temp, m + 1, r, threshold);
-			merge(arr, temp, l, m, r);
+			mergesort_v(arr, temp, l, m, threshold);
+			mergesort_v(arr, temp, m + 1, r, threshold);
+			merge_v(arr, temp, l, m, r);
 		}
 	}
 }

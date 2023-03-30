@@ -13,7 +13,7 @@
 
 NAME = PmergeMe
 
-SRCS =	main.cpp PmergeMe.cpp sort.cpp
+SRCS =	main.cpp PmergeMe.cpp sort_vector.cpp sort_que.cpp
 OBJS = ${SRCS:.cpp=.o}
 
 CXX  = g++

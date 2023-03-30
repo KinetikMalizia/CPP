@@ -15,8 +15,9 @@
 int	main(int ac, char **av)
 {
 	PmergeMe	cont;
-	double		time_v = 0;
+	float		time_v = 0;
 	char		*str;
+	int			size;
 
 	if (ac != 2)
 	{
@@ -36,10 +37,18 @@ int	main(int ac, char **av)
 		return (1);
 	}
 	cont.fill_cont(str);
+	size = cont.get_vec_size();
+	std::cout << "before: ";
 	cont.print_vec5();
+	std::cout << std::setprecision(8);
 	time_v = cont.sort_vec();
+	std::cout << "after : ";
 	cont.print_vec5();
-	std::cout << "\nsort took [" << time_v << std::setprecision(5) << "]sec for vector\n";
+	std::cout << "\nsort of " << size <<" elements took [" << time_v * 100000 << "]us for std::vector\n";
+	//cont.print_deq5();
+	time_v = cont.sort_deq();
+	//cont.print_deq5();
+	std::cout << "\nsort of " << size <<" elements took [" << time_v * 100000 << "]us for std::deque\n";
 
 
 	/* cont.print_vec();
