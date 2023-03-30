@@ -14,12 +14,10 @@
 
 PmergeMe::PmergeMe()
 {
-	std::cout << "create\n";
 }
 
 PmergeMe::~PmergeMe()
 {
-	std::cout << "destroy\n";
 }
 
 void	PmergeMe::add_num(int x)
@@ -52,8 +50,26 @@ void	PmergeMe::print_vec(void)
 
 	for (itr = this->vec.begin(); itr != this->vec.end(); itr++)
 	{
-		std::cout << *itr << std::endl;
+		std::cout << *itr << " ";
 	}
+	std::cout << "\n";
+}
+
+void	PmergeMe::print_vec5(void)
+{
+	std::vector<int>::iterator itr;
+	int	d_limit = d_limit = vec.size();
+
+	if (this->vec.size() > 5)
+		d_limit = 5;
+
+	for (itr = this->vec.begin(); itr != this->vec.begin() + d_limit; itr++)
+	{
+		std::cout << *itr << " ";
+	}
+	if (this->vec.size() > 5)
+		std::cout << "[...]";
+	std::cout << "\n";
 }
 
 void	PmergeMe::print_deq(void)
@@ -69,16 +85,14 @@ void	PmergeMe::print_deq(void)
 double	PmergeMe::sort_vec(void)
 {
 	time_t	start, end;
+	std::vector<int> *temp_vec = new std::vector<int>(3000);
 
 	start = std::clock();
-	for (int i = 0; i < 100000; ++i)
-	{
-		std::cout << "wait... ";
-	}
-	std::cout << std::endl;
+
+	mergesort(this->vec, *temp_vec,0,this->vec.size()-1, 3);
+
 	end = std::clock();
 	return ((double)(end-start) / (double)CLOCKS_PER_SEC);
-	
 }
 
 int	PmergeMe::get_vec_size(void)
